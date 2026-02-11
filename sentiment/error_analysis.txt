@@ -1,0 +1,206 @@
+FALSE POSITIVES (negative reviews classified as positive)
+These are negative reviews that Popper's rules MISSED
+
+============================================================
+FALSE POSITIVE — s4
+============================================================
+Sentiment: negative
+Review:    This movie's basic premise is that everyone in the world can know that a person is gay except for that person. And that a man who likes show tunes, has good taste, and is neat in appearance MUST be a homosexual. Yes, the movie is funny in parts, but the basic premise is to homophobic and insulting t
+
+Sentence-level: ['has_pos_word(s4).', 'has_neg_word(s4).', 'more_pos_than_neg(s4).']
+Positive words: ['like', 'good', 'neat', 'yes', 'funny', 'good']
+Negative words: ['insult', 'painful']
+Negation words: none
+
+============================================================
+FALSE POSITIVE — s6
+============================================================
+Sentiment: negative
+Review:    I viewed the first two nights before coming to IMDb looking for some actor info. I saw the 9+ rating which surprised me since I was not that impressed by what I'd seen. (As reference, I happen to believe Lonesome Dove was the best TV western ever. I grew up next to the MGM back lots in Culver City i
+
+Sentence-level: ['has_pos_word(s6).', 'has_neg_word(s6).', 'has_negation_sentence(s6).', 'more_pos_than_neg(s6).']
+Positive words: ['surprise', 'impressed', 'good', 'certain', 'motivation', 'well', 'sure']
+Negative words: ['lonesome', 'lack', 'poor', 'shoot']
+Negation words: ['not', 'not', 'not', 'not']
+
+============================================================
+FALSE POSITIVE — s12
+============================================================
+Sentiment: negative
+Review:    It seems on the surface to be a romantic _planes, trains and automobiles_ but at times tried for something more, where it failed miserably. Some may like the nontraditional ending, but the attempts at "deep insight" into the world of marriage flopped around not really going anywhere.<br /><br />But 
+
+Sentence-level: ['has_pos_word(s12).', 'has_neg_word(s12).', 'has_negation_sentence(s12).']
+Positive words: ['romantic', 'like', 'interested', 'special', 'satisfy']
+Negative words: ['fail', 'miserably', 'flop', 'distract', 'annoy']
+Negation words: ['not']
+
+============================================================
+FALSE POSITIVE — s16
+============================================================
+Sentiment: negative
+Review:    "Stella", starring Bette Midler in the title role, is an unabashed tearjerker. Set in upstate New York, Stella Claire works nights as a bar maid, pouring and dancing in a workingman's saloon. One night, in comes a slumming medical intern, Stephen Dallas, who woos Stella, and in the course of their a
+
+Sentence-level: ['has_pos_word(s16).', 'has_neg_word(s16).', 'has_negation_sentence(s16).', 'more_pos_than_neg(s16).']
+Positive words: ['woo', 'gorgeous', 'loving', 'caring', 'interesting', 'truly']
+Negative words: ['poverty', 'bad', 'offender', 'no']
+Negation words: ['not', 'no']
+
+============================================================
+FALSE POSITIVE — s18
+============================================================
+Sentiment: negative
+Review:    A different look at horror. The styling differences between American and Russian films is interesting. However from my American perspective this movie just wasn't that good. The protagonist, Marie played by Anastasia Hille wasn't a pleasant character and I had a hard time identifying with her. She w
+
+Sentence-level: ['has_pos_word(s18).', 'has_neg_word(s18).', 'has_negation_sentence(s18).', 'more_pos_than_neg(s18).']
+Positive words: ['interesting', 'good', 'play', 'pleasant', 'original', 'recommend']
+Negative words: ['horror', 'disagreeable', 'annoying']
+Negation words: ['not', 'not', 'not', 'not']
+
+============================================================
+FALSE POSITIVE — s33
+============================================================
+Sentiment: negative
+Review:    In what I can say was a theft of my time I was taken to see this movie and I must say what a horrible experience. Fay Ann Lee is a terrible actress and is unconvincing in this movie. Larryjoe76 is obviously a shill reviewer. The plot is thin to say the least, the Cantonese dialog is not funny. See t
+
+Sentence-level: ['has_pos_word(s33).', 'has_neg_word(s33).', 'has_negation_sentence(s33).']
+Positive words: ['funny', 'like', 'well']
+Negative words: ['horrible', 'terrible', 'waste']
+Negation words: ['not']
+
+============================================================
+FALSE POSITIVE — s35
+============================================================
+Sentiment: negative
+Review:    I'm a bit spooked by some of these reviews praising A.K.A. Not only do they sound as if they were written by the same person, but they contain all kinds of insider information that surely you could only find by reading the press book from cover to cover. Please don't tell me that the director is wri
+
+Sentence-level: ['has_pos_word(s35).', 'has_neg_word(s35).', 'has_negation_sentence(s35).', 'more_pos_than_neg(s35).']
+Positive words: ['praise', 'kind', 'surely', 'surprise', 'great', 'good', 'wish', 'innovative', 'interesting', 'like', 'opportunity']
+Negative words: ['sad', 'hate', 'shame', 'bad', 'sadly']
+Negation words: ['not']
+
+============================================================
+FALSE POSITIVE — s42
+============================================================
+Sentiment: negative
+Review:    Perhaps I couldn't find the DVD menu selection for PLOT: ON OFF. Clearly, the default is OFF. When the end credits began to roll, I couldn't believe that was it. Like our poor, but beautiful protagonist, I felt used, dirty, cheap....<br /><br />The characters were drawn in very broad strokes and the
+
+Sentence-level: ['has_pos_word(s42).', 'has_neg_word(s42).', 'has_negation_sentence(s42).', 'more_pos_than_neg(s42).']
+Positive words: ['clearly', 'credit', 'like', 'beautiful', 'wealthy', 'appreciate', 'nice']
+Negative words: ['poor', 'dirty', 'disdain', 'problem', 'alas']
+Negation words: ['not', 'not', 'not']
+
+
+############################################################
+FALSE NEGATIVES (positive reviews classified as negative)
+These are positive reviews that Popper's rules WRONGLY FLAGGED
+############################################################
+
+============================================================
+FALSE NEGATIVE — s2
+============================================================
+Sentiment: positive
+Review:    "Japan takes the best from around the world and makes it their own", while that may be true, it applies to all except for one thing, that being,.....Major league baseball....but not to worry, "Mr Baseball" is there to try and change all that. But just who will change whom, is the part of the movie t
+
+Sentence-level: ['has_pos_word(s2).', 'has_neg_word(s2).', 'has_negation_sentence(s2).', 'more_pos_than_neg(s2).']
+Positive words: ['good', 'true', 'favorite', 'comedic', 'true', 'gentle', 'respectful', 'truly', 'enjoyable', 'funny', 'definitely']
+Negative words: ['worry', 'dead', 'obstacle']
+Negation words: ['not']
+
+============================================================
+FALSE NEGATIVE — s8
+============================================================
+Sentiment: positive
+Review:    I'm not a Disney fan at all, but I happen to be in Orlando for a friend's wedding. So my traveling partner and I went to Disney for a few days. I haven't seen a good 3-D effect in, well..ever. So I usually try to stay away from these presentations. The 3-D effect in this was so good. I'm a grown man
+
+Sentence-level: ['has_pos_word(s8).', 'has_neg_word(s8).', 'has_negation_sentence(s8).', 'more_pos_than_neg(s8).']
+Positive words: ['fan', 'friend', 'good', 'good', 'good', 'like', 'friend', 'nice', 'friend', 'awesome']
+Negative words: ['disappoint']
+Negation words: ['not', 'not', 'not', 'not', 'not']
+
+============================================================
+FALSE NEGATIVE — s9
+============================================================
+Sentiment: positive
+Review:    Disney, the film name that once stood for all things innocent and suitable for all ages, has finally started to realise that to survive it needs to become more diverse. Such diversity has been very apparent in the last couple of years. Films like "Tarzan" and "The Emperor's New Groove" have made an 
+
+Sentence-level: ['has_pos_word(s9).', 'has_neg_word(s9).', 'has_negation_sentence(s9).', 'more_pos_than_neg(s9).']
+Positive words: ['innocent', 'like', 'bold', 'mature', 'mature', 'interesting', 'love', 'yes', 'love', 'kiss', 'attraction', 'good', 'hero', 'heroine', 'expand', 'attractive', 'rich', 'amusing', 'alright', 'stunning', 'truly', 'amazing', 'create', 'fan', 'alive', 'treat', 'treat', 'dynamic', 'compliment', 'help', 'adventure', 'thrill', 'like', 'delight', 'positive', 'enjoy', 'enjoy']
+Negative words: ['scare', 'unfortunately', 'suffer', 'lose', 'suspend', 'conflict', 'shoot', 'tension', 'suspend']
+Negation words: ['not', 'not', 'not', 'not', 'not', 'not', 'not', 'not', 'not', 'never', 'not']
+
+============================================================
+FALSE NEGATIVE — s13
+============================================================
+Sentiment: positive
+Review:    It's a shame that by garnering a restricted rating, perhaps the audience that would find this film the most useful won't likely see it.<br /><br />Imaginary Heroes follows the life of a teenager after his brothers' suicide. Not, of course, the most original story in the world, however it does spend 
+
+Sentence-level: ['has_pos_word(s13).', 'has_neg_word(s13).', 'has_negation_sentence(s13).', 'more_neg_than_pos(s13).']
+Positive words: ['useful', 'heroes', 'original', 'great', 'hero', 'accept', 'powerful', 'resolve', 'strong', 'commit', 'party']
+Negative words: ['shame', 'restricted', 'suicide', 'fail', 'failure', 'refuse', 'trouble', 'suicide', 'regrettable', 'tragedy', 'restrict', 'suicide', 'censor', 'poor']
+Negation words: ['not', 'not', 'not', 'not']
+
+============================================================
+FALSE NEGATIVE — s17
+============================================================
+Sentiment: positive
+Review:    This is a movie that gets better each time I see it. There are so many nuanced performances in this. William Tracey, as Pepi, is a delight, bringing sharp comic relief. Joseph Schildkraut as Vadas, is the only "villian" in the movie, and his oily charms are well used here. Frank Morgan, is delightfu
+
+Sentence-level: ['has_pos_word(s17).', 'has_neg_word(s17).', 'more_pos_than_neg(s17).']
+Positive words: ['well', 'delight', 'relief', 'charm', 'delightful', 'like', 'accomplish', 'outstanding', 'charming', 'attractive', 'amazing', 'perfectly', 'great', 'good', 'enjoyable', 'romantic', 'comedy', 'recommend', 'appreciate']
+Negative words: ['desperate', 'neurotic', 'fire', 'misunderstanding', 'shock', 'anger', 'fear', 'embarrassment', 'traumatic']
+Negation words: none
+
+============================================================
+FALSE NEGATIVE — s22
+============================================================
+Sentiment: positive
+Review:    Most reviews say that this is the weakest point in Hamilton's short movie career. This movie is a bit different from the rest, and considering it the best or the worst depends on what you expect from a movie, and what you expect from Hamilton.<br /><br />Knowing Hamilton as a photographer, you can b
+
+Sentence-level: ['has_pos_word(s22).', 'has_neg_word(s22).', 'has_negation_sentence(s22).', 'more_pos_than_neg(s22).']
+Positive words: ['good', 'like', 'beautiful', 'well', 'like', 'like', 'acceptable', 'fan', 'like', 'comedy', 'fan', 'laugh', 'smile', 'hand', 'hand', 'well', 'good', 'special', 'accept', 'praise']
+Negative words: ['weak', 'bad', 'disappointed', 'lose', 'low', 'shoot', 'stop', 'neglect', 'neglect']
+Negation words: ['not', 'not', 'not', 'not', 'not', 'not', 'not', 'not']
+
+============================================================
+FALSE NEGATIVE — s25
+============================================================
+Sentiment: positive
+Review:    /The first episode I saw of Lost made me think, i thought what is this some people who crashed and get chased by a giant monster. But it's not like that, it's far more than that,because their is no monster at all and every episode that you see of Lost , well it's getting better every time. a deserte
+
+Sentence-level: ['has_pos_word(s25).', 'has_neg_word(s25).', 'has_negation_sentence(s25).', 'more_neg_than_pos(s25).']
+Positive words: ['like', 'well', 'hope']
+Negative words: ['lost', 'crash', 'lost', 'crash']
+Negation words: ['not', 'not', 'not']
+
+============================================================
+FALSE NEGATIVE — s32
+============================================================
+Sentiment: positive
+Review:    The dead spots and picture-postcard superficiality of "Out of Africa" just about buried any interest I might have had to read Isak Dinesen. So when my brother bought me "Babette's Feast," and knowing it was based on a Dinesen story, I didn't exactly race to the VCR. But as the titles rolled, it beca
+
+Sentence-level: ['has_pos_word(s32).', 'has_neg_word(s32).', 'has_negation_sentence(s32).', 'more_pos_than_neg(s32).']
+Positive words: ['interest', 'clear', 'merit', 'like', 'cherished', 'like', 'commitment', 'like', 'great', 'success', 'jolliness', 'create', 'triumph', 'god', 'richness', 'faith', 'humor', 'beautifully', 'comedy', 'hopeful', 'resolute']
+Negative words: ['dead', 'forbid', 'hardship', 'reject', 'fear', 'doubt', 'regret']
+Negation words: ['not', 'not', 'not', 'never', 'never']
+
+============================================================
+FALSE NEGATIVE — s44
+============================================================
+Sentiment: positive
+Review:    Friz Freleng's 'Rumours' is an excellent Private Snafu cartoon that warns against spreading panic-inducing rumours during wartime. Produced, as were all the Snafu shorts, to be shown to military audiences as entertaining instructional films, 'Rumours' is extremely imaginative and crams tons of ideas
+
+Sentence-level: ['has_pos_word(s44).', 'has_neg_word(s44).', 'has_negation_sentence(s44).', 'more_neg_than_pos(s44).']
+Positive words: ['excellent', 'entertaining', 'brilliantly', 'funny', 'help', 'good']
+Negative words: ['snafu', 'panic', 'snafu', 'snafu', 'lose', 'war', 'haunt', 'snafu', 'terrible', 'snafu']
+Negation words: ['not']
+
+============================================================
+FALSE NEGATIVE — s47
+============================================================
+Sentiment: positive
+Review:    This is how movies are supposed to be made: a fascinating setting; characters about whom you come to care deeply; writing and editing that move the plot efficiently and build suspense. This is a wonderful film -- deeply moving without being sentimental. Highly recommended.
+
+Sentence-level: ['has_pos_word(s47).', 'more_pos_than_neg(s47).']
+Positive words: ['fascinating', 'care', 'efficiently', 'wonderful', 'sentimental', 'recommend']
+Negative words: none
+Negation words: none

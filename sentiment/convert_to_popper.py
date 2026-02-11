@@ -5,19 +5,22 @@ import os
 
 nlp = spacy.load("en_core_web_sm")
 
-# Simple sentiment lexicons
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+_vader = SentimentIntensityAnalyzer()
+
+# VADER lexicon maps words to float scores: positive > 0, negative < 0
+# Using a threshold of ±1.0 to keep only clearly sentiment-bearing words
+_VADER_THRESHOLD = 1.0
 positive_words = {
-    'great', 'excellent', 'amazing', 'love', 'wonderful', 'best',
-    'fantastic', 'enjoy', 'beautiful', 'perfect', 'brilliant',
-    'superb', 'outstanding', 'fun', 'good', 'like', 'recommend'
+    word for word, score in _vader.lexicon.items()
+    if score >= _VADER_THRESHOLD
 }
 negative_words = {
-    'bad', 'terrible', 'worst', 'awful', 'boring', 'waste',
-    'poor', 'horrible', 'hate', 'stupid', 'dull', 'disappoint',
-    'annoying', 'ugly', 'fail', 'worse', 'weak', 'mediocre'
+    word for word, score in _vader.lexicon.items()
+    if score <= -_VADER_THRESHOLD
 }
-
-negation_words = {'not', 'no', 'never', 'neither', 'nor', 'none'}
+print(f"Lexicon loaded: {len(positive_words)} positive, {len(negative_words)} negative words")
 
 
 def clean_text(text):
@@ -39,7 +42,11 @@ def generate_popper_files(csv_path, output_dir='imdb_reviews_example'):
         bk.write(":- discontiguous has_word/3.\n")
         bk.write(":- discontiguous is_adj/1.\n")
         bk.write(":- discontiguous is_verb/1.\n")
+        bk.write(":- discontiguous is_noun/1.\n")
+        bk.write(":- discontiguous is_adv/1.\n")
         bk.write(":- discontiguous is_negation/1.\n")
+        bk.write(":- discontiguous is_positive_word/1.\n")
+        bk.write(":- discontiguous is_negative_word/1.\n")
         bk.write(":- discontiguous precedes/3.\n")
         bk.write(":- discontiguous has_pos_word/1.\n")
         bk.write(":- discontiguous has_neg_word/1.\n")
@@ -50,12 +57,17 @@ def generate_popper_files(csv_path, output_dir='imdb_reviews_example'):
 
         for i, row in df.iterrows():
             sent_id = f"s{i}"
-            label = "pos" if row['sentiment'] == 'positive' else "neg"
 
-            #  Examples 
-            exs.write(f"{label}(positive_review({sent_id})).\n")
+            # Be sure to update bias file if switching between negative and positive
+            # Predict Positive
+            #label = "pos" if row['sentiment'] == 'positive' else "neg"
+            #exs.write(f"{label}(positive_review({sent_id})).\n")
 
-            # Background Knowledge 
+            #Predict Negative
+            label = "pos" if row['sentiment'] == 'negative' else "neg"
+            exs.write(f"{label}(negative_review({sent_id})).\n")
+
+            # Background Knowledge
             doc = nlp(row['review'])
 
             lemmas = []
@@ -63,7 +75,6 @@ def generate_popper_files(csv_path, output_dir='imdb_reviews_example'):
 
             for token in doc:
                 is_neg = (
-                    token.lemma_.lower() in negation_words or
                     token.dep_ == "neg" or
                     token.text.lower() == "n't"
                 )
@@ -73,7 +84,8 @@ def generate_popper_files(csv_path, output_dir='imdb_reviews_example'):
 
                 word_id = f"w{i}_{token.i}"
                 word_text = clean_text(token.lemma_)
-                lemmas.append(token.lemma_.lower())
+                lemma_lower = token.lemma_.lower()
+                lemmas.append(lemma_lower)
 
                 # Word identity
                 bk.write(f"has_word({sent_id}, {word_id}, '{word_text}').\n")
@@ -83,17 +95,27 @@ def generate_popper_files(csv_path, output_dir='imdb_reviews_example'):
                     bk.write(f"is_adj({word_id}).\n")
                 if token.pos_ == "VERB":
                     bk.write(f"is_verb({word_id}).\n")
+                if token.pos_ =="NOUN":
+                    bk.write(f"is_noun({word_id}).\n")
+                if token.pos_ =="ADV":
+                    bk.write(f"is_adv({word_id}).\n")
 
                 # Negation
                 if is_neg:
                     bk.write(f"is_negation({word_id}).\n")
+
+                # *** NEW: Word-level sentiment ***
+                if lemma_lower in positive_words:
+                    bk.write(f"is_positive_word({word_id}).\n")
+                if lemma_lower in negative_words:
+                    bk.write(f"is_negative_word({word_id}).\n")
 
                 # Word order
                 if prev_word_id is not None:
                     bk.write(f"precedes({sent_id}, {prev_word_id}, {word_id}).\n")
                 prev_word_id = word_id
 
-            # --- Sentence-level features ---
+            # Sentence-level features
             has_neg = any(
                 t.dep_ == 'neg' or t.text.lower() == "n't"
                 for t in doc
