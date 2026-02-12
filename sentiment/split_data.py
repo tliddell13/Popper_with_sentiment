@@ -3,8 +3,8 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv("IMDB_dataset.csv")
 
-train_size = 50
-test_size = 50
+train_size = 77
+test_size = 40
 
 train_df, test_df = train_test_split(
     df, train_size=train_size, test_size=test_size,
