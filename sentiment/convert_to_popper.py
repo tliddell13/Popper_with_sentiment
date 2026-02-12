@@ -11,7 +11,7 @@ _vader = SentimentIntensityAnalyzer()
 
 # VADER lexicon maps words to float scores: positive > 0, negative < 0
 # Using a threshold of ±1.0 to keep only clearly sentiment-bearing words
-_VADER_THRESHOLD = 1.0
+_VADER_THRESHOLD = 1
 positive_words = {
     word for word, score in _vader.lexicon.items()
     if score >= _VADER_THRESHOLD

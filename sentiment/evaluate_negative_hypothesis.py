@@ -106,18 +106,18 @@ if __name__ == '__main__':
 
     # Paste the learned negative_review hypothesis here
     hypothesis = """
-negative_review(V0):- has_word(V0,V2,V1),has_word(V0,V3,V1),is_negative_word(V3),precedes(V0,V3,V2).
+negative_review(V0):- has_word(V0,V1,V3),precedes(V0,V1,V2),has_word(V0,V2,V3),is_negative_word(V1).
+negative_review(V0):- has_word(V0,V2,V1),more_neg_than_pos(V0),is_noun(V2),is_positive_word(V2).
 negative_review(V0):- has_word(V0,V2,V1),is_adj(V2),has_word(V0,V3,V1),is_adv(V3).
-negative_review(V0):- has_word(V0,V2,V1),is_positive_word(V2),is_noun(V2),more_neg_than_pos(V0).
-negative_review(V0):- has_word(V0,V2,V3),is_adj(V2),precedes(V0,V2,V1),is_negative_word(V1),is_adv(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_positive_word(V2),is_noun(V2),precedes(V0,V2,V1),is_negative_word(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_positive_word(V2),precedes(V0,V2,V1),is_negative_word(V1),is_verb(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_positive_word(V2),precedes(V0,V2,V1),is_adv(V1),is_negation(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_positive_word(V2),is_adv(V2),precedes(V0,V2,V1),is_negative_word(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_verb(V2),precedes(V0,V2,V1),is_negative_word(V1),is_negation(V1).
-negative_review(V0):- has_word(V0,V2,V3),is_positive_word(V2),precedes(V0,V2,V1),is_adv(V1),is_verb(V2).
-negative_review(V0):- has_word(V0,V2,V3),is_adj(V2),precedes(V0,V2,V1),is_adv(V1),is_negative_word(V2).
-negative_review(V0):- more_neg_than_pos(V0),has_word(V0,V2,V3),is_adv(V2),precedes(V0,V2,V1),is_negative_word(V1).
+negative_review(V0):- has_word(V0,V1,V3),is_verb(V1),precedes(V0,V1,V2),is_negation(V2),is_negative_word(V2).
+negative_review(V0):- has_word(V0,V1,V3),is_positive_word(V1),precedes(V0,V1,V2),is_adv(V2),is_verb(V1).
+negative_review(V0):- has_word(V0,V1,V3),is_noun(V1),is_positive_word(V1),precedes(V0,V1,V2),is_negative_word(V2).
+negative_review(V0):- has_word(V0,V1,V3),is_adj(V1),precedes(V0,V1,V2),is_adv(V2),is_negative_word(V2).
+negative_review(V0):- has_word(V0,V1,V3),is_positive_word(V1),precedes(V0,V1,V2),is_verb(V2),is_negative_word(V2).
+negative_review(V0):- has_word(V0,V2,V3),precedes(V0,V2,V1),is_adv(V2),is_negative_word(V1),is_positive_word(V2).
+negative_review(V0):- has_word(V0,V1,V3),is_positive_word(V1),precedes(V0,V1,V2),is_adv(V2),is_negation(V2).
+negative_review(V0):- has_word(V0,V1,V3),is_adj(V1),precedes(V0,V1,V2),is_adv(V2),is_negative_word(V1).
+negative_review(V0):- more_neg_than_pos(V0),has_word(V0,V2,V3),precedes(V0,V2,V1),is_adv(V2),is_negative_word(V1).
 """
 
     print("\nEvaluating on test set...")
